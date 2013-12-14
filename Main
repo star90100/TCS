@@ -1,0 +1,190 @@
+echo off
+cls
+echo LODING FILES/GAME OPTIONS...
+ping localhost -n 5 >nul
+cls
+echo off
+color 0a
+:loop
+:menu
+cls
+echo Welcome to the The Cursed Soul
+echo Your current options...
+echo Your options...
+echo 1) Begin task
+echo 2) Information
+echo 3) Exit
+set /p number=
+
+if not defined number (
+cls
+goto loop
+)
+
+if %number% == 1 goto game
+if %number% == 2 goto info
+if %number% == 3 exit
+
+
+
+
+:info
+color 1b
+echo This game is coded by:
+echo Main Coder: Badsantagaming
+echo Helper: Anyomomsc
+goto menu
+
+
+
+:game
+cls
+echo Hello what is your name?
+echo set /pname=
+echo Hello %name%
+echo You were just getting home from work
+PAUSE
+cls
+echo Your are a lawyer for a military operation
+PAUSE
+cls
+echo You don’t make very much money for a living so you live in a duplex with a roommate
+PAUSE
+cls
+echo When you get home you find your roommate dead, and there is a killer waiting for you
+PAUSE
+cls
+echo You RUN!!!
+PAUSE
+echo You get away but you get to the cops but they arrest you for murder
+PAUSE
+cls
+echo You got framed...
+PAUSE
+cls
+echo Your goal right now is to escape
+echo This is your story...
+goto lvl1
+
+
+
+:lvl1
+PAUSE
+cls
+echo Your cell mate wants you dead
+PAUSE
+cls
+echo What will you do %name%
+PAUSE
+echo 1) Fight him
+echo 2) Call the guard
+set /p input=select 1 or 2
+if %input% == 1 goto prisondead
+if %input% == 2 goto lv2
+
+:prisondead
+echo He beat you to death
+PAUSE
+goto lose1
+
+
+:lose1
+echo GAME OVER
+PAUSE
+echo Do you want to restart 
+echo Y
+echo N
+set /p input=select y or n or Y or N
+if %input% == Y goto lvl1
+if %number% == N exit
+if %number% == n exit
+if %input% == Y goto lvl1
+
+
+:lv2
+echo The guards came you were saved.
+PAUSE
+cls
+echo Your cell mate got put in the pit
+
+:minilvl1
+echo What do you do now
+echo 1) Sleep
+echo 2) Find a way out
+echo 3) Do nothing
+set /p input=select 1 or 2 or 3
+if %input%== 1 goto minilvl1
+if %input%== 2 goto lv3
+if %input%== 3 goto lose1
+
+
+:lv3
+cls
+echo You picked the guard’s key so when the shift changes for 30 min you escape
+PAUSE
+echo You're on the highway what do you do       NOTE You are still in a prison jumpsuit
+echo 1) Walk to town
+echo 2) Call down a car
+set /p input=select 1 or 2
+if %input% == 1 goto lvl4
+if %input% == 2 gotominilvl2
+
+
+:minilvl2
+cls
+echo He saw your prison jumpsuit and took you back
+goto lose1
+
+
+
+:lvl4
+echo Welcome to the city of Chicago
+PAUSE
+echo 1) Go find new cloths
+echo 2) Spend the night at a motel
+echo 3) Get into a fight for some money
+set /p input=select 1 or 2 or 3
+if %input%== 1 goto lvl5
+if %input%== 2 goto lvl6
+if %input%== 3 goto lvl7
+
+
+
+:lvl5
+echo You have no money so you can’t get any clothes or food
+PAUSE
+goto lvl8
+
+
+
+
+:lvl6
+echo The manager sees that you are wearing a prison jumpsuit but he doesn’t care
+PAUSE
+cls
+echo You spend a warm night
+PAUSE
+cls
+echo You have no money to pay; he call the police, but you get away before they can get you
+PAUSE
+cls
+echo A cop sees you and takes you to jail
+PAUSE
+goto lose1
+
+
+
+:lvl7
+echo You win the fight and also collect his clothes (+50$   New Clothes)
+goto lvl9
+
+
+
+:lvl9
+echo Now You have 50$ what do you do now?
+echo 1) Walk to town
+echo 2) Call down a car
+set /p input=select 1 or 2
+if %input% == 1 goto lvl4
+if %input% == 2 gotominilvl2
+
